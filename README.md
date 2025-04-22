@@ -1,5 +1,17 @@
 # terraform-mongodbatlas-cli
 
+This module allows you to run MongoDB Atlas CLI commands using Terraform. It uses the `mongocli` command line tool to execute the commands and captures the output.
+
+## Requirements
+
+To use this module, you need to have the following installed:
+- [Terraform](https://www.terraform.io/downloads.html) (>= 1.3.7)
+- [Mongodbatlas CLI](https://www.mongodb.com/docs/atlas/cli/stable/install/) (>= 1.26.0)
+
+## Usage
+
+In examples folder you can find examples of how to use this module.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
