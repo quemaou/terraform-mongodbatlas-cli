@@ -19,5 +19,5 @@ variable "project_id" {
 module "this" {
   source = "../"
 
-  cli_query   = ["clusters", "list", "--projectId", var.project_id, "-o", "json"]
+  cli_query = ["clusters", "list", "--projectId", var.project_id, "-o", "json"]
 }
