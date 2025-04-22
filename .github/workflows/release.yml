@@ -1,7 +1,7 @@
 name: Terraform Module Release
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
