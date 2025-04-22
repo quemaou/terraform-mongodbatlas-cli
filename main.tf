@@ -1,6 +1,6 @@
 locals {
   tmp_dir             = "${path.cwd}/.terraform/tmp"
-  default_output_path = "${local.tmp_dir}/atlas_output_${uuid()}.txt"
+  default_output_path = "${local.tmp_dir}/atlas_output.txt"
   final_output_path   = var.output_path != null ? var.output_path : local.default_output_path
 }
 
