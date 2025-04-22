@@ -1,7 +1,7 @@
 name: Terraform Module Validation
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
