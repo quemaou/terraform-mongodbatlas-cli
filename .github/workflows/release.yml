@@ -1,0 +1,50 @@
+# .github/workflows/terraform-release.yml
+name: Terraform Module Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Tag & Release Module
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get latest merged PR title
+        id: pr_title
+        run: |
+          PR_TITLE=$(gh pr list --state merged --base main --limit 1 --json title --jq '.[0].title')
+          echo "Latest PR title: $PR_TITLE"
+          VERSION=$(echo "$PR_TITLE" | grep -oE '^v[0-9]+\.[0-9]+\.[0-9]+')
+          if [ -z "$VERSION" ]; then
+            echo "❌ No version found in PR title. Use format: v1.2.3 - Description"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "::set-output name=version::$VERSION"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create Git Tag
+        run: |
+          git tag $VERSION
+          git push origin $VERSION
+        env:
+          VERSION: ${{ steps.pr_title.outputs.version }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.pr_title.outputs.version }}
+          name: Release ${{ steps.pr_title.outputs.version }}
+          generate_release_notes: true
