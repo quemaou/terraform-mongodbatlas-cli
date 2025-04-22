@@ -20,4 +20,3 @@ data "local_file" "this" {
 
   depends_on = [null_resource.this]
 }
-

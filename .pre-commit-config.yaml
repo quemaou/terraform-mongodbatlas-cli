@@ -14,4 +14,6 @@ repos:
       - id: terraform_tflint
         args: ['--init']
       - id: terraform_docs
-        args: ['--output-file', 'README.md', '--output-mode', 'replace']
+        args:
+          - --args=--config=.terraform_docs.yml
+          - --hook-config=--create-file-if-not-exist=true

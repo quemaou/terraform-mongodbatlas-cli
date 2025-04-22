@@ -1,0 +1,32 @@
+# terraform-docs configuration file
+version: "0.19.0"
+
+formatter: markdown document
+output-file: README.md
+output-mode: inject
+
+sort:
+  enabled: true
+  by: name
+
+content: |-
+  <!-- BEGIN_TF_DOCS -->
+  {{ .Content }}
+  <!-- END_TF_DOCS -->
+
+output:
+  clean: true
+  sort-by: name
+  merge: true
+
+settings:
+  anchor: true
+  color: false
+  default: true
+  description: true
+  escape: true
+  hide-empty: true
+  indent: 2
+  required: true
+  sensitive: true
+  type: true
