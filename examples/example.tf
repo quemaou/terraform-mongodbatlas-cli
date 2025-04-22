@@ -21,3 +21,7 @@ module "this" {
 
   cli_query = ["clusters", "list", "--projectId", var.project_id, "-o", "json"]
 }
+
+output "result" {
+  value = try(module.this.atlas_cli_output[0].createDate, "There isn't any cluster in the project.")
+}
