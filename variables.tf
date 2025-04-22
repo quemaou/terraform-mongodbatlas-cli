@@ -1,6 +1,7 @@
 variable "cli_query" {
   description = "Put here the query you want to run."
   type        = list(string)
+  default     = []
 }
 
 variable "output_path" {

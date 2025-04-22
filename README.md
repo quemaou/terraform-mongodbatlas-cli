@@ -25,9 +25,9 @@ The following resources are used by this module:
 - [null_resource.this](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) (resource)
 - [local_file.this](https://registry.terraform.io/providers/hashicorp/local/latest/docs/data-sources/file) (data source)
 
-## Required Inputs
+## Optional Inputs
 
-The following input variables are required:
+The following input variables are optional (have default values):
 
 ### <a name="input_cli_query"></a> [cli\_query](#input\_cli\_query)
 
@@ -35,9 +35,7 @@ Description: Put here the query you want to run.
 
 Type: `list(string)`
 
-## Optional Inputs
-
-The following input variables are optional (have default values):
+Default: `[]`
 
 ### <a name="input_output_path"></a> [output\_path](#input\_output\_path)
 
