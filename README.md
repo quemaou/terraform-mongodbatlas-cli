@@ -64,5 +64,9 @@ The following outputs are exported:
 ### <a name="output_atlas_cli_output"></a> [atlas\_cli\_output](#output\_atlas\_cli\_output)
 
 Description: Output of the Atlas CLI command.
+
+### <a name="output_atlas_cli_output_raw"></a> [atlas\_cli\_output\_raw](#output\_atlas\_cli\_output\_raw)
+
+Description: Output of the Atlas CLI command.
 <!-- END_TF_DOCS -->
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
