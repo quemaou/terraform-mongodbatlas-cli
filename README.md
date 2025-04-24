@@ -6,7 +6,6 @@ This module allows you to run MongoDB Atlas CLI commands using Terraform. It use
 
 To use this module, you need to have the following installed:
 - [Terraform](https://www.terraform.io/downloads.html) (>= 1.3.7)
-- [Mongodbatlas CLI](https://www.mongodb.com/docs/atlas/cli/stable/install/) (>= 1.26.0)
 
 ## Usage
 
