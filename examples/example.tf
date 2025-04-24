@@ -2,8 +2,6 @@ terraform {
   required_version = ">= 1.3.7"
 }
 
-provider "mongodbatlas" {}
-
 variable "project_id" {
   description = "The project ID."
   type        = string
